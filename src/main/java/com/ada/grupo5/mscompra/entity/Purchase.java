@@ -33,6 +33,8 @@ public class Purchase {
     @Column(name = "expire_card_date")
     private LocalDate expireCardDate;
 
+    private String accountOwner;
+
     public Purchase(PurchaseDto purchaseDto) {
         this.purchaseDate = purchaseDto.purchaseDate();
         this.price = purchaseDto.price();
@@ -40,10 +42,12 @@ public class Purchase {
         this.cardNumber = purchaseDto.cardNumber();
         this.cvv = purchaseDto.cvv();
         this.expireCardDate = purchaseDto.expireCardDate();
+        this.accountOwner = purchaseDto.accountOwner();
     }
 
     public PurchaseDto PurchaseToDto(){
-        return new PurchaseDto(this.purchaseDate, this.price, this.store, this.cardNumber, this.cvv, this.expireCardDate);
+        return new PurchaseDto(this.purchaseDate, this.price, this.store, this.cardNumber, this.cvv, this.expireCardDate,
+        this.accountOwner);
     }
 
 }

@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public record PurchaseDto(LocalDateTime purchaseDate, BigDecimal price, String store, String cardNumber, String cvv, LocalDate expireCardDate) {
+public record PurchaseDto(LocalDateTime purchaseDate, BigDecimal price, String store, String cardNumber, String cvv, LocalDate expireCardDate,
+                          String accountOwner) {
     @Override
     public LocalDateTime purchaseDate() {
         return purchaseDate;
@@ -33,5 +34,10 @@ public record PurchaseDto(LocalDateTime purchaseDate, BigDecimal price, String s
     @Override
     public LocalDate expireCardDate() {
         return expireCardDate;
+    }
+
+    @Override
+    public String accountOwner() {
+        return accountOwner;
     }
 }
