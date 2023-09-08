@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 public record PurchaseDto(LocalDateTime purchaseDate, BigDecimal price, String store, String cardNumber, String cvv, LocalDate expireCardDate,
                           String accountOwner) {
+
     @Override
     public LocalDateTime purchaseDate() {
         return purchaseDate;

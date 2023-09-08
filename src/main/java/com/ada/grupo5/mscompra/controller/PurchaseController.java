@@ -17,7 +17,7 @@ public class PurchaseController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    private PurchaseDto createPurchase(@RequestBody PurchaseDto body){
+    private PurchaseDto createPurchase(@RequestBody PurchaseDto body) throws Exception {
         return purchaseService.createPurchase(body);
     }
 }

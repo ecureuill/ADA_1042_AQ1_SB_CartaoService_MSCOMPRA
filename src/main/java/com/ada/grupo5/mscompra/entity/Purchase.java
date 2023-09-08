@@ -1,6 +1,7 @@
 package com.ada.grupo5.mscompra.entity;
 
 import com.ada.grupo5.mscompra.dto.PurchaseDto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -33,7 +34,6 @@ public class Purchase {
     private String store;
 
     @Column(name = "card_number")
-    @Size(min = 12, max = 12, message = "Número do cartão deve ser composto por exatamente 12 números")
     @NotBlank(message = "O campo Número de Cartão não deve estar em branco")
     @NotNull(message = "O campo Número de Cartão não deve ser nulo")
     private String cardNumber;
